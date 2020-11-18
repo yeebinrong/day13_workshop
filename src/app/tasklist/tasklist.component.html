@@ -1,0 +1,20 @@
+<h1>Task List</h1>
+<div class="row" *ngIf="todoList.length <= 0">
+    <mat-card>
+        <h3>Your to do list is empty!</h3>
+    </mat-card>
+</div>
+<mat-card *ngFor="let item of todoList">
+    <div class="row">
+        <div class="col-8">
+            <mat-card-header>
+                <mat-card-title><strong>{{item.description}}</strong></mat-card-title>
+                <mat-card-subtitle>Priority is {{item.priority}}</mat-card-subtitle>
+            </mat-card-header>
+        </div>
+        <div class="col-4">
+            <mat-card-footer>Due by {{item.date._d.toLocaleDateString()}}</mat-card-footer>
+            <!-- <mat-card-actions>button</mat-card-actions> -->
+        </div>
+    </div>
+</mat-card>

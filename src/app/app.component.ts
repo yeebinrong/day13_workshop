@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'day13workshop';
+  
+  todoList = [];
+
+  constructor(private fb: FormBuilder) { }
+
+  ngOnInit() {
+  }
+
+  addTodo (values) {
+
+    this.todoList.push(values);
+    console.log("todogroup " + this.todoList[0]);
+  }
 }
